@@ -1,0 +1,16 @@
+
+waf;120;40;130
+mom;90;10;10
+gd;01;90;130
+
+$$STORY$$
+
+The leaves fell out the tree, a choir of silent deaths. Wind scurries past the branches in chaotic yet arrhythmic fashion.
+waf;It sure is cold today!
+mom;You're right! Luckily we brought our jackets with us.
+
+In the distance, a security guard walks into view and makes his way to the duo.
+
+gd;Hello there, I was wondering if you two are sufficiently prepared for the cold weather up ahead. I'm telling ya, there might even be snow soon. $bsSnow$be, in this day and age?!
+mom;Oh yes, thank you $isvery$ie much. We brought everything we need.
+waf;Yes sir.$asWaffuru takes something out of their bag.$aeWe even have gloves.
