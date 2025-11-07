@@ -1,19 +1,25 @@
 
 <div align="center"> 
 <h1>Novella</h1>
-`A simple declarative narrative writing tool.`
+<i>A simple declarative narrative writing tool.</i>
 </div>
 <br />
 
-Write your story as a text file with inline tags, run it through *Novella* and receive a *pdf* as output with all decorations applied. This is a convenience tool made to facilitate the writing of narrative stories and exporting them into *pdf*s. 
+Write your story as a text file with inline tags, run it through *Novella* and receive a *pdf* as output with all decorations applied. This is a convenience tool made to facilitate the writing of narrative stories and exporting them easily. 
 
 --- 
-The project started as a way to provide customization options for styling text. I'm a fan of adding colourization to characters, tying in with their personality & vibe. When a story stretches on for hundreds of pages, adding the colour each time is a redundant task, and error-prone. Even worse, deciding the colour of one character doesn't match anymore, and needing to update it *everywhere* in the document. Not cool.
+The project started as a way to provide customization options for styling text. I'm a fan of adding colourization to characters, tying in with their personality & vibe. When a story stretches on for hundreds of pages, adding the colour each time is a redundant and error-prone task. Even worse, deciding the colour of one character doesn't match anymore, and needing to update it *everywhere* in the document. Not cool.
 
 This self-made problem is solved by this self-made solution :)
 
-
 > This project is far from complete, but the core functionality is present. I intend to revamp a lot of tags to Markdown-like notation, as it's more intuitive, plus expanding the features available.
+
+## Installation
+Currently, the only way to install *Novella* is to build it from source. This will require the Rust toolchain to be installed on your device, as `cargo` is used.
+1. Clone this repository
+2. Move into the directory
+3. run `cargo build --release`
+4. The executable will be located at `./target/release/novella`, which you can move where you want, or add to your PATH. 
 
 
 ## Documentation 
