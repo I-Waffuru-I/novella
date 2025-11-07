@@ -2,8 +2,21 @@
 name = "novella"
 version = "0.1.0"
 edition = "2024"
+authors = ["Mathijs V."]
+description = "A simple declarative narrative writing tool"
+repository = "https://github.com/I-Waffuru-I/novella"
+keywords = ["pdf", "writing", "styling"]
+license = "MIT"
+
+
+[[bin]]
+name = "novella"
+bench = false
+path = "src/main.rs"
+
 
 [dependencies]
 regex = "1.11.1"
 strum = "0.27.2"
 tectonic = { git = "https://github.com/tectonic-typesetting/tectonic", branch = "master"}
+
