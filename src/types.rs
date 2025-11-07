@@ -1,11 +1,11 @@
 use std::fmt::Display;
 
+/// A catch-all enum to represent errors during parsing & building.
+/// Entry names try to be self-explanatory.
 #[derive(Debug,PartialEq)]
 pub enum StoryError {
     UnknownError,
-    NoSetupSeparator,
     RegexNoMatchedLine(String),
-    RegexFailedToMakeRegex
 }
 impl Display for StoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20,6 +20,7 @@ pub enum LineType {
     Spacing
 }
 
+/// Tokens describe what the input file is like. An iterable of these is provided by the Parser to the Builder.
 #[derive(Debug,PartialEq)]
 pub enum Token {
     Init,
@@ -32,7 +33,7 @@ pub enum Token {
     BoldStart, BoldStop,
     InsertStart,InsertStop,
     SmallStart, SmallStop,
-    ColorStart(String), ColorStop,
+    ColorStart(String),
     ShortBreak,
     LongBreak,
     NewShort,
@@ -50,7 +51,6 @@ pub enum MessageType {
     Message,
     End,
 }
-
 #[derive(Debug)]
 pub struct Message {
     sender: String,

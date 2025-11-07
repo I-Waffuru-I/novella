@@ -9,6 +9,7 @@ pub static SETUP_SEPARATOR : &str = "$$STORY$$";
 
 
 
+/// Parses inputs to a stack of Tokens to be handled externally.
 pub struct Parser {
     character_reg : Regex,
     line_reg : Regex,
@@ -80,7 +81,7 @@ impl Parser {
     /// Parses the setup string to tokens
     fn parse_characters(&mut self,lines : &str) ->Result<(),StoryError> {
         for l in lines.lines(){
-            if l.trim().is_empty() {
+            if l.trim().is_empty() || l.trim().starts_with('#') {
                 continue
             }
              let ch = self.parse_setup_to_char(l)?;
@@ -148,7 +149,6 @@ impl Parser {
 
         if has_name {
             self.tokens.push(Token::DialogueStop);
-            self.tokens.push(Token::ColorStop)
         } else {
             self.tokens.push(Token::NarratorStop);
         }
@@ -173,7 +173,7 @@ impl Parser {
         if line.is_empty() {
             return LT::Empty
         }
-        if line.starts_with('#') {
+        if line.trim().starts_with('#') {
             return LT::Empty
         }
         if line.contains("$lb") {

@@ -25,7 +25,6 @@ impl Builder {
                 Token::End => tex_s += "\n\\end{document}",
 
                 Token::ColorStart(color) => current_color = color.clone(),
-                Token::ColorStop => current_color = String::new(),
 
                 Token::Text(t) => tex_s += t,
 

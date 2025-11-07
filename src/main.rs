@@ -1,16 +1,21 @@
-use std::{env,fs::read_to_string, io::Write};
-use tectonic;
 
+
+//! Novella is a tool to simplify styling narrative writing.
+//! It expects a file path as input and will write the results to `./output.pdf`, creating if
+//! needed, overwriting if needed.
+
+use std::{env,fs::read_to_string, io::Write};
 use crate::{
     parser::Parser,
     builder::Builder,
-    types::StoryError,
-}
-;
+    types::StoryError
+};
+use tectonic;
 
 mod parser;
 mod builder;
 mod types;
+
 #[cfg(test)]
 mod tests;
 
@@ -38,7 +43,6 @@ fn run(path : &str, output : &str) -> Result<(), StoryError> {
     let tokens = parser.tokenize(rslt)?;
     let built = builder.build_stack(tokens)?;
     let pdf = tectonic::latex_to_pdf(&built).unwrap();
-    println!("Output length: [{}]",pdf.len());
     let mut file = std::fs::File::create(output).unwrap();
     println!("Created file");
     file.write(&pdf).unwrap();

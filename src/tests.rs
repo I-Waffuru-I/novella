@@ -1,7 +1,10 @@
 
 use crate::{
-    builder::Builder, parser::{Parser,SETUP_SEPARATOR}, types::Token
+    builder::Builder,
+    parser::{Parser,SETUP_SEPARATOR},
+    types::Token
 };
+
 
 //
 // TEST TOKENS
@@ -54,15 +57,12 @@ waf;yet another thing
         Token::DialogueStart,
         Token::Text("more stuff".to_string()),
         Token::DialogueStop,
-        Token::ColorStop,
         Token::ColorStart("waf".to_string()),
         Token::DialogueStart,
         Token::Text("yet another thing".to_string()),
         Token::DialogueStop,
-        Token::ColorStop,
         Token::End);
     let res = p.tokenize(text);
-    dbg!(&res);
     assert_eq!(Ok(&tokens), res);
 }
 
@@ -86,7 +86,6 @@ waf;yet $bsanother$be thing
         Token::Text("stuff".to_string()),
         Token::ItalicStop,
         Token::DialogueStop,
-        Token::ColorStop,
         Token::ColorStart("waf".to_string()),
         Token::DialogueStart,
         Token::Text("yet ".to_string()),
@@ -95,10 +94,8 @@ waf;yet $bsanother$be thing
         Token::BoldStop,
         Token::Text(" thing".to_string()),
         Token::DialogueStop,
-        Token::ColorStop,
         Token::End);
     let res = p.tokenize(text);
-    dbg!(&res);
     assert_eq!(Ok(&tokens), res);
 }
 
@@ -117,7 +114,6 @@ be;199;230;1
         Token::Begin,
         Token::End);
     let res = p.tokenize(text);
-    dbg!(&res);
     assert_eq!(Ok(&tokens), res);
 }
 
@@ -143,8 +139,6 @@ more stuff
     let split = p.split(text.clone());
     let res = p.tokenize(text);
 
-    dbg!(&res);
-    dbg!(&split);
     assert_eq!("", split.0);
     assert_eq!("stuff\nmore stuff", split.1.trim());
 
@@ -243,7 +237,6 @@ fn test_builder() {
 \\usepackage{xcolor}
 \\begin{document}
 \\end{document}"));
-    dbg!(&res);
 
     assert_eq!(expected, res);
 }
