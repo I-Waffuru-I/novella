@@ -6,6 +6,7 @@ use std::fmt::Display;
 pub enum StoryError {
     UnknownError,
     RegexNoMatchedLine(String),
+    ParsingError(String)
 }
 impl Display for StoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

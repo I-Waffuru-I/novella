@@ -1,24 +1,20 @@
 use regex::Regex;
-use crate::types::{
-    StoryError,
-    LineType as LT,
-    Token,
+use crate:: types::{
+    LineType as LT, StoryError, Token
 };
-
-pub static SETUP_SEPARATOR : &str = "$$STORY$$"; 
-
 
 
 /// Parses inputs to a stack of Tokens to be handled externally.
 pub struct Parser {
     character_reg : Regex,
     line_reg : Regex,
-    tokens : Vec<Token>
-
+    tokens : Vec<Token>,
+    setup_separator : String,
+    token : char,
 }
 
 impl Parser {
-    pub fn new()->Parser {
+    pub fn new(separator:&str, token : char)->Parser {
         let line_reg = Regex::new(r"^(?<name>\w{1,3});(?<line>.+$)").expect("Line Regex init failed");
         let character_reg = Regex::new(r"(?<name>\w{1,3});(?<red>\d{1,3});(?<gre>\d{1,3});(?<blu>\d{1,3})").expect("Character Regex init failed");
         let tokens : Vec<Token> = vec!();
@@ -27,6 +23,8 @@ impl Parser {
             character_reg,
             line_reg,
             tokens,
+            token,
+            setup_separator : separator.to_string(),
         }
     }
 
@@ -49,10 +47,10 @@ impl Parser {
         let mut nl_count : u8 = 0;
 
         for (i,v) in full_text.lines().enumerate() {
-            if v.contains(SETUP_SEPARATOR) {
+            if v.contains(&self.setup_separator) {
                 split_index = if i > 0 { i as u8 -1} else { 0 };
                 has_setup = true;
-                let _ = full_text.replace(SETUP_SEPARATOR, "\n");
+                let _ = full_text.replace(&self.setup_separator, "\n");
                 break;
             }
         }
@@ -67,7 +65,7 @@ impl Parser {
             if v == '\n' {
                 if nl_count >= split_index {
                     setup_end_index = i as u64;
-                    story_start_index = i as u64 + SETUP_SEPARATOR.len() as u64;
+                    story_start_index = i as u64 + self.setup_separator.len() as u64;
                     return (full_text[..setup_end_index as usize].to_string() , full_text[story_start_index as usize+1.. ].to_string())
                 } else {
                     nl_count += 1;
@@ -133,7 +131,7 @@ impl Parser {
         }
         for (i, c) in line[last_consumed..].chars().enumerate() {
             let j = start_index + i;
-            if c == '$' {
+            if c == self.token {
                 self.tokens.push(Token::Text(line.chars().take(j).skip(last_consumed).collect()));
                 // Have to Take chars instead of slicing the str, because of multi-byte chars like
                 // `'`
@@ -170,23 +168,26 @@ impl Parser {
 
 
     fn get_line_type(&self, line : &str) -> LT {
-        if line.is_empty() {
+        let l = line.trim();
+        if l.is_empty() {
             return LT::Empty
         }
-        if line.trim().starts_with('#') {
+        if l.starts_with('#') {
             return LT::Empty
         }
-        if line.contains("$lb") {
-            return LT::Spacing
-        }
-        if line.contains("$sb") {
-            return LT::Spacing
-        }
-        if line.contains("$nl"){
-            return LT::Spacing
-        }
-        if line.contains("$ns") {
-            return LT::Spacing
+        if l.starts_with(self.token) {
+            if l.contains("lb") {
+                return LT::Spacing
+            }
+            if l.contains("sb") {
+                return LT::Spacing
+            }
+            if l.contains("nl"){
+                return LT::Spacing
+            }
+            if l.contains("ns") {
+                return LT::Spacing
+            }
         }
         return LT::Text
     }

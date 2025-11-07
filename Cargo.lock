@@ -1898,6 +1898,7 @@ checksum = "5e0826a989adedc2a244799e823aece04662b66609d96af8dff7ac6df9a8925d"
 name = "novella"
 version = "0.1.0"
 dependencies = [
+ "clap",
  "regex",
  "strum",
  "tectonic",
