@@ -57,17 +57,21 @@ Each character definition features a shorthand name and the rgb-value for the wa
 
 Next comes the story itself. Every line results in a text block in the final output. A line can either be narrated or dialogue. The latter is defined by the character short name appearing at the start. If no character is mentioned at the start, Novella treats it as a narration line. Inline tags are handled in both cases.
 
+The default character to start a tag is `$`. This can be changed by providing the `-o` argument 
 Styling tags are delimited by a **s**tart tag and **e**nd tag. Currently supported tags are:
-- `$as & $ae`: Insert narration within a dialogue line 
-- `$is & $ie`: Makes the text italic
-- `$bs & $be`: Makes the text bold
-- `$ss & $se`: Makes the font size smaller
+- `as & ae`: Insert narration within a dialogue line 
+- `is & ie`: Makes the text italic
+- `bs & be`: Makes the text bold
+- `ss & se`: Makes the font size smaller
+- `fs & fe`: Starts a "flashback" section, in which text colour is more pale.
 
 There are a few 'Spacing' tags to play with empty spaces between paragraphs. When any of these are used, the line should be empty, safe for the tag.
-- `$lb`: A long horizontal bar, often used to signify a long jump in time or new chapter
-- `$sb`: A short horizontal bar, used moreso to detail a shorter flash forward 
-- `$nl`: Leaves a vertical space between the lines
-- `$ns`: Leaves a smaller vertical space between the lines
+- `lb`: A long horizontal bar, often used to signify a long jump in time or new chapter
+- `sb`: A short horizontal bar, used moreso to detail a shorter flash forward 
+- `nl`: Leaves a vertical space between the lines
+- `ns`: Leaves a smaller vertical space between the lines
 
 Empty lines and lines starting with `#` (comments) are ignored and won't make any difference on the output.
+
+
 

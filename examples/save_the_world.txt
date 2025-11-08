@@ -1,0 +1,220 @@
+sy;160;20;140
+de;30;130;120
+au;140;20;110
+old;154;34;20
+
+
+@@@@
+A tear comes out. Bat an eye. It rolls down. Drips to the ground. My eyes are dry.
+
+Everything is gone. One moment to the other, an army reduced to dust, shrapnell, ash and bone. It’s bloody. All over, an ocean of remains, scattered on the flank of the mountain. A scaffold of stone with a decor of organs and innards. Not even the modern air carriages, terrorizing weapons of destruction, managed to hold their own against this… this abomination, this unbelievable force of nature, this strangely handsome man.
+
+%lb
+
+I take a step back and wait. Derek grunts and picks up his shield, just in case. Rumors spread about this place but never enough to get the full picture. The location definitely fits, and the overgrowth of vegetation matches the somber descriptions we’d heard. Vines ornate every piece of the wooden structure, its main supports rotten yet somehow holding up with help from a duo of stone pillars.
+The door slides open with a creak, too loud to my liking. A slice of light illuminates part of an old man’s head, scarred, dirty, worn out. He eyes us up and down, sags his eyebrows and speaks up.
+
+old;What do you want?
+
+I wince at his rude tone. Derek huffs once more before responding.
+
+de;Are you Sir Leifur?
+old;What if I am?
+de;We, uhm, we’ve heard rumors you might be able to help us.
+old;I’m not in the ‘helping’ business. Go bother someone else.
+sy;W-wait!%asI intervene as he moves to close the door.%aeIt’s about the Carmitters. They’ve been causing you problems, right? We can help stop them.
+
+He stops. One eye appears again in the split.
+
+old;Hmm?
+sy;You want that, right? We might know a way, but we need your help.
+
+After a moment, the door slides open and he beckons us inside. Derek and I exchange a look before committing to it; we follow the old man inside.
+To call this place a ruin would do it service. Nothing seems to have been cleaned in several years, not the layers of dust on every shelf, not the paint on the walls, not the cups and cutlery near the sink. The soft breeze gets cut short when we shut the wooden door behind us, leaving us stuck in the poignant stank that lingers throughout the room, reeking of old and abandoned furniture.
+
+old;Sit down.
+
+He pushes two chairs towards us, as eroded from the passage of time as everything else in this place. I fear the legs will give out when we take a seat, but don’t want to spoil the figure’s hospitality. Surprisingly, they hold up even when my companion sits down with his heavy weapons and protection.
+The homeowner sits down across the table.
+
+old;Tell me.
+sy;Right, uhmm…
+de;We’ve heard rumors that you might know the location of a weapon, one colloquially known as The Divine Power.
+
+The moment the name escapes Derek’s mouth, the man flinches and narrows his eyelids.
+
+de;You recognize its name?
+old;Hmm. Of course I do. I’ve seen it in action - probably the last person alive to have done so.
+de;Great! How much do you know abo-
+old;It won’t help.
+de;...
+old;...
+sy;Huh? What do you mean?
+old;I mean it won’t help. Divine Power only helps on very, very rare occasions if the threat brings enough people in danger. That’s not the case.
+sy;Then what reason was provided when you saw it being used?
+old;Don’t they teach you history anymore?
+de;Not since the Carmitters took over and rampaged civilization.
+old;Hmmm.
+sy;...
+de;...
+old;Dragons.
+de;Dragons?
+old;Dragons. Five hundred of them, charging together from the North.
+sy;F-five hundred?? Aren’t they exceedingly rare? How did so many gather?
+old;They weren’t rare at the time. That only came after this encounter, where they were decimated in a matter of minutes.
+
+I can’t help but let my mouth fall open. The man doesn’t look senile yet, meaning that unless he’s lying about the prowesses he witnessed, this might be a way to finally free these lands of the oppressors. If we hadn’t heard countless rumors regarding this legendary item, I can’t say for sure either of us would believe him.
+
+sy;That’s incredible! There has to be a drawback to using it, no?” One of his eyebrows raises questionably, before lowering back into its neutral state.
+old;No idea. I was a foot soldier, I only saw the hordes of flying things roaring towards us before they started bursting, one by one.
+
+I nod. This is all good news, but maybe suspiciously good news. I’m not certain how much to believe given the attitude of this bag of bones. He may be telling the truth, he may be lying to pester us and we have no way of telling. That’s what frustrates me most.
+Derek’s mind is clearly processing everything as well. Despite his appearance, he’s got a head on his shoulders and a very rational way of seeing every situation. Sometimes too much so. His mind is likely going through the same steps as I, determining whether to put trust in this shady figure or not.
+
+de;Last thing before we leave you be, do you perhaps remember where they were found? A description is nice, but without lead we won’t get far.
+old;Not a clue. All I remember is crossing the Wide Fields and fighting on the side of a mountain.
+de;And what did the area look like? A forest? Desert? The Wide Fields leading directly to the hill side?
+old;Do you think I know all of that? This was ages ago, far before you both were even born. I’ve only got so much memory.
+de;R-right, sorry.
+sy;We’ll be on our way then.
+old;I do remember one thing: rumors of a bridge or step, cross which is said to often cost more than what one has to offer. One if you manage to cross, you’ll reach what you seek, though it may not look as you expect it to.
+sy;...
+de;... we appreciate the input.
+sy;y-yes. Thank you for your time.
+
+The man grunts and mumbles something we can’t make out when we pass through the door. We bid our farewells to deaf ears as he slams the door with surprising power, so much so I feared the roof might collapse from the shock. Luckily for him, the deeply rotten pillars held on strong, else he’d be crushed by the rubble. 
+Silently, Derek and I make eye contact. He nods sideways, I nod affirmatively. We depart in silence, aiming to cover some distance from the house we just left. A safety measure we took on to make sure we can’t be traced easily or eavesdropped on. Small steps to keep ourselves safe on this excursion.
+It isn’t till we both agree on the distance that he speaks up.
+
+de;What a dick.
+sy;Yeah. Think we can take his word for it?
+de;I think so. He was grumpy and rude, but didn’t look the type to sabotage. Especially given what we aim to do aligns with his wishes.
+sy;I agree. We can head to the fields for now and see if anything can help along the way.
+de;Not like we have any other leads to follow…
+sy;That’s pessimistic.
+de;I am pessimistic.
+sy;... Right.
+
+I lean back against a tree and exhale, slow, long, deep. We can’t agree on everything. Since the journey started, he and I have had varying opinions on a few topics, though luckily we’ve managed to settle it quicker than how those imbeciles at home would have. He’s a rational guy, again, sometimes too much so. There’s moments where he’s far too direct to my liking, seemingly oblivious to the intricacies of interpersonal communication. In short, he’s clever, but obtuse when it comes to handling people with care. Regardless, he makes for a useful companion on this journey, well versed in rummaging through the wilderness and able to hold his own in most duels - better so than I.
+
+sy;How’re the supplies?
+de;More than enough for the fields. We could restock near the border, I know of a trader.
+sy;Good.
+
+I take a swig from my hip flask, offer him it and we depart.
+
+%lb
+
+With a groan, I slump back down against the rock. Despite curling up, the powerful wind manages to blast its way into my hair, pulling the heat out of my ears like a faucet to a barrel. No matter where or how I sit, the current finds me and crashes with all its might against my will to keep this journey up. Of course, despite the hardships, I won’t abandon the quest.
+
+Not like I have anything to go back to…
+
+My back is beginning to feel rough after lying against this hard, cold surface for hours on end. Can’t lay down or I might fall asleep. Judging by the moon, there isn’t much time left before I can wake Derek up to change shifts. Until then, me and my thoughts. 
+And the wind.
+Too much wind.
+
+I pull my shortbow closer, pass my thumb over the small carvings in the grip, try to tear my failing mind away from the land of slumber. I have to stay awake. 
+Sleeping in now would… do me good, actually. A lot of good.
+%ns
+But he’d be very pissed.
+But it’d be nice.
+I really shouldn’t.
+I won’t
+%nl
+
+%sb
+%fs
+Some specs of dust land in my eye. I flinch and wipe, trying to remove it. What’s going on? 
+A lifeless rabbit in hand, its neck neatly pierced by an arrow of mine - lucky shot, I thought it’d go through the body and ruin the organs - I find my way back to the main path used by merchants and travelers. I know the way without this beaten path, but I might encounter someone with more information about the rumbling sounds from before.
+Not too long ago, out of nothing, it began. A very deep and quiet, though still distinguishable sound, like a thousand drums being beaten simultaneously in the distance. What surprised me was the town bells ringing. Usually it’s rhythmic, to announce what time of the day it is, but this instance was very chaotic and aggressive, as if it was being pulled as fast as possible, before abruptly stopping.
+I’ve been walking this path for some time now and haven’t encountered anyone; something strange is going on. I pick up the pace.
+Again, a speck of dust lands in my eye, I stop to look around where it’s coming from, inspect the powder, smell the air - ash and coals. That’s not good. What’s burning? I start jogging - faster yet sustainable for the remaining distance. The smell strengthens, increasingly noticeable the closer I get to town.
+There’s a clearing soon, I get a glimpse of the sky, the horizon; orange, massive dark clouds growing and spreading from its general direction. I’m worried, but I’m almost there.
+And that’s when I see the first limbs splattered in the dirt. Crushed bone, flesh torn to shreds, multiple corpses flattened on the stones as if run over by a hundred horses. 
+%fe
+%sb
+%ns
+gasp
+breathe
+breathe
+relax
+%ns
+It’s fine. It’s over. That’s all past. We’ll figure it out. We’ll solve this. We’ll solve this… somehow.
+
+
+It was a short, accidental nap. The moon hasn’t moved much, but my shift is coming to an end regardless. Maybe I should wake him up. Maybe; I’m not sure I want to sleep. If it’s to be reminded of home in my nightmares, staying awake is a good decision as well.
+
+Derek stirs awake at the other rock. The howling of air into our ears drowns out all the noise my waking up caused, so I don’t believe that to be what caused it. Though I can’t make out everything, I watch as he turns himself around to face me. A silent, questioning nod. I respond by pointing at the moon. Confirmative nod. I shuffle myself into the blanket, put my head on the makeshift pillow and try to sleep.
+
+%ns
+
+.
+..
+...
+
+%ns
+I can’t.
+%ns
+Of course I can’t. My eyelids are glued together but it doesn’t work. Every thought from then echoes through my head, a never-ending spiral of repeating the same actions until madness, of stumbling across horrors none should ever be witness to.
+Derek moves over to my rock.
+
+de;Can’t sleep?
+
+I nod affirmatively.
+
+de;Sucks.
+
+We sit in silence. Neither of us feels like talking - I shouldn’t even be trying to, sleep doesn’t come to those that are engaged in conversation - but again, sleep isn’t it for me, either. As such, I look at the stars, and Derek at… whatever is in front of us.
+Out of nowhere:
+
+de;Do you also dream of it?
+
+My neck twists to look at him.
+
+sy;Of? Home?
+de;Yes.
+sy;I do.
+de;...
+sy;...
+de;Is that why you can't sleep?
+sy;It is. Or, well, part of the reason.
+de;...
+sy;...
+de;I… I could barely get my eyes closed at first. As soon as I did, everything I saw came back to me like a wave of horror and gore.
+
+I sit up.
+
+sy;I get that. Want to talk about it?
+de;Maybe… maybe later....Not yet. Sorry, I want to settle my thoughts cohesively first.
+sy;That’s fine.
+de;...
+sy;...
+de;Sorry for bringing it up.
+sy;It’s fine, no pressure.
+
+We’ve not been on the same boat all the time, but it can’t hurt to talk about these things once or twice. Better understanding him and his mind is sort of a side objective here, right after ‘staying alive’ and ‘finding the weapon’. Understanding the person you’re traveling with and trusting them - to a degree - is vital for expeditions like this. We have to operate similarly enough to derive what the other plans on doing if something goes astray.
+Can’t say that topic was something I expected him to bring up, though. He seemed to be a heavy hitter excelling at hiding his emotions and using nothing but rationality when making decisions, so catching a moment of fragility is… off putting. Off putting, but also relieving. Good to know he’s a vulnerable human just like me.
+
+sy;You said you know a trader on the other side of the plains.
+de;I do. An acquaintance from quite a few seasons ago.
+sy;Work?
+de;In a way, yes.
+
+Hmm. 
+
+sy;Think they’ll help us?
+de;Maybe. It’s been some time.
+
+I have to resist the urge to enquire deeper, but it’s clear this part of his life is still locked. Maybe if we get to trust each other more, he’ll tell me. Or if we meet this trader, I can ask them.
+
+sy;Okay. I’m heading back to sleep.
+de;Trying to, you mean.
+
+He says with a smile; a rare occurrence.
+
+sy;Pff, yeah, that.
+de;Good night.
+sy;Good night.
+
+I wrap myself in the cloth and turn over, while Derek moves back to his rock. After listening to the endless howling of the wind, I finally manage to close my eyes and sleep.
+
