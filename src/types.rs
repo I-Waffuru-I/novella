@@ -21,6 +21,12 @@ pub enum LineType {
     Spacing
 }
 
+#[derive(Debug,PartialEq)] 
+pub enum TextMode {
+    Normal,
+    Flashback,
+}
+
 /// Tokens describe what the input file is like. An iterable of these is provided by the Parser to the Builder.
 #[derive(Debug,PartialEq)]
 pub enum Token {
@@ -29,6 +35,7 @@ pub enum Token {
     CharacterDef(String,String,String,String),
     DialogueStart, DialogueStop,
     NarratorStart, NarratorStop,
+    FlashbackStart,FlashbackStop,
     Text(String),
     ItalicStart, ItalicStop,
     BoldStart, BoldStop,

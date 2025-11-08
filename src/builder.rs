@@ -16,17 +16,20 @@ impl Builder {
     pub fn build_stack(&self, tokens : &Vec<Token>)-> Result<String,StoryError> {
         let mut tex_s = String::new();
         let mut current_color = String::new();
+        let mut current_mode = TextMode::Normal;
 
         for token in tokens {
             match token {
-                Token::Init => tex_s += "\\documentclass{report}\n\\usepackage{xcolor}",
+                Token::Init => tex_s += "\\documentclass{report}\n\\usepackage{xcolor}\n\\setlength\\parindent{0pt}",
                 Token::CharacterDef(n,r,g,b)=> tex_s += &self.define_character(&n, &r, &g, &b),
                 Token::Begin=> tex_s += "\n\\begin{document}",
                 Token::End => tex_s += "\n\\end{document}",
 
-                Token::ColorStart(color) => current_color = color.clone(),
+                Token::ColorStart(color) => current_color = if current_mode == TextMode::Normal {color.clone()} 
+                    else {"gray".to_string()},
 
-                Token::Text(t) => tex_s += t,
+                Token::Text(t) =>  if current_mode == TextMode::Normal {tex_s += t}
+                    else {tex_s += &format!("\\textcolor{{gray}}{{{t}}}")},
 
                 Token::NarratorStart => tex_s += "\n",
                 Token::NarratorStop => tex_s += "\n",
@@ -34,6 +37,9 @@ impl Builder {
                 Token::DialogueStop => tex_s += "}''\n",
                 Token::InsertStart => tex_s += "}'' ",
                 Token::InsertStop => tex_s += &format!("`` \\textcolor{{{current_color}}}{{"),
+
+                Token::FlashbackStart => current_mode = TextMode::Flashback,
+                Token::FlashbackStop => current_mode = TextMode::Normal,
 
                 Token::ItalicStart => tex_s += "\\textit{",
                 Token::ItalicStop => tex_s += "}",

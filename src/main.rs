@@ -35,11 +35,14 @@ fn main() {
 fn run(args : &Args) -> Result<(), StoryError> {
     let mut parser = Parser::new(&args.story_separator,get_token(args)?);
     let builder = Builder::new();
-    // tex.0 = setup, tex.1 = content
     let rslt = read_to_string(args.input_file_path.clone()).expect(&format!("Couldn't read file at path {}",args.input_file_path));
 
     let tokens = parser.tokenize(rslt)?;
     let built = builder.build_stack(tokens)?;
+    if args.debug != 0 {
+        let mut dbg_file = std::fs::File::create("debug.txt").unwrap();
+        let _ = dbg_file.write(built.as_bytes());
+    }
     let pdf = tectonic::latex_to_pdf(&built).unwrap();
     let mut file = std::fs::File::create(args.output_file_name.clone()).unwrap();
     println!("Created file");

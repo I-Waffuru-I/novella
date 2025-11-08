@@ -153,7 +153,7 @@ impl Parser {
     }
 
     fn get_token_from_command(&self, command : &str)-> Token {
-        match command {
+        match command.to_lowercase().as_str() {
             "is" => Token::ItalicStart,
             "ie" => Token::ItalicStop,
             "bs" => Token::BoldStart,
@@ -162,6 +162,8 @@ impl Parser {
             "ae" => Token::InsertStop,
             "ss" => Token::SmallStart,
             "se" => Token::SmallStop,
+            "fs" => Token::FlashbackStart,
+            "fe" => Token::FlashbackStop,
             rest => Token::Text(rest.to_string())
         }
     }

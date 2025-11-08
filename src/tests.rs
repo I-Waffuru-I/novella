@@ -127,6 +127,7 @@ fn test_builder() {
     let expected = Ok(String::from("\
 \\documentclass{report}
 \\usepackage{xcolor}
+\\setlength\\parindent{0pt}
 \\definecolor{be}{RGB}{199,230,1}
 \\begin{document}
 narrator talking
