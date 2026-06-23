@@ -1,3 +1,5 @@
+use std::ops::Mul;
+
 use crate::types::*;
 
 
@@ -15,7 +17,8 @@ impl Builder {
 
     pub fn build_stack(&self, tokens : &Vec<Token>)-> Result<String,StoryError> {
         let mut tex_s = String::new();
-        let mut current_color = String::new();
+        let mut current_color = String::from("black");
+        let mut current_dialogue_color = String::from("black");
         let mut current_mode = TextMode::Normal;
 
         for token in tokens {
@@ -25,33 +28,38 @@ impl Builder {
                 Token::Begin=> tex_s += "\n\\begin{document}",
                 Token::End => tex_s += "\n\\end{document}",
 
-                Token::ColorStart(color) => current_color = if current_mode == TextMode::Normal {color.clone()} 
-                    else {"gray".to_string()},
+                Token::ColorStart(color) => (current_color, current_dialogue_color) = if current_mode == TextMode::Normal {("black".to_string(), color.clone())} 
+                    else {("gray".to_string(), color.clone() +"f")},
 
-                Token::Text(t) =>  if current_mode == TextMode::Normal {tex_s += t}
-                    else {tex_s += &format!("\\textcolor{{gray}}{{{t}}}")},
+                Token::Text(t) => tex_s += t,
 
-                Token::NarratorStart => tex_s += "\n",
-                Token::NarratorStop => tex_s += "\n",
-                Token::DialogueStart => tex_s += &format!("\n-``\\textcolor{{{current_color}}}{{"),
+                Token::NarratorStart => tex_s += &format!("\n\\textcolor{{{current_color}}}{{"),
+                Token::NarratorStop => tex_s += "}\n",
+                Token::DialogueStart => tex_s += &format!("\n-``\\textcolor{{{current_dialogue_color}}}{{"),
                 Token::DialogueStop => tex_s += "}''\n",
-                Token::InsertStart => tex_s += "}'' ",
-                Token::InsertStop => tex_s += &format!("`` \\textcolor{{{current_color}}}{{"),
+                Token::InsertStart => tex_s += &format!("}}'' \\textcolor{{{current_color}}}{{"),
+                Token::InsertStop => tex_s += &format!("}}`` \\textcolor{{{current_dialogue_color}}}{{"),
 
-                Token::FlashbackStart => current_mode = TextMode::Flashback,
-                Token::FlashbackStop => current_mode = TextMode::Normal,
+                Token::FlashbackStart => {
+                    current_mode = TextMode::Flashback;
+                    current_color = String::from("gray");
+                }
+                Token::FlashbackStop => {
+                    current_mode = TextMode::Normal;
+                    current_color = String::from("black");
+                }
 
                 Token::ItalicStart => tex_s += "\\textit{",
-                Token::ItalicStop => tex_s += "}",
+                Token::ItalicStop => tex_s += "} ",
                 Token::BoldStart => tex_s += "\\textbf{",
-                Token::BoldStop => tex_s += "}",
+                Token::BoldStop => tex_s += "} ",
                 Token::SmallStart => tex_s += "\\begin{small}",
                 Token::SmallStop => tex_s += "\\end{small}",
 
-                Token::ShortBreak => tex_s += "\n\\begin{center}\\noindent\\rule{8cm}{0.4pt}\\end{center}",
-                Token::LongBreak => tex_s += "\n\\begin{center}\\noindent\\rule{3cm}{0.4pt}\\end{center}",
-                Token::NewLong => tex_s += "\n\\vspace{10mm}",
-                Token::NewShort => tex_s += "\n\\vspace{5mm}",
+                Token::ShortBreak => tex_s += "\n\\begin{center}\\noindent\\rule{3cm}{0.4pt}\\end{center}\n",
+                Token::LongBreak => tex_s += "\n\\begin{center}\\noindent\\rule{7cm}{0.4pt}\\end{center}\n",
+                Token::NewLong => tex_s += "\n\\vspace{10mm}\n",
+                Token::NewShort => tex_s += "\n\\vspace{5mm}\n",
 
             }
         }
@@ -61,7 +69,10 @@ impl Builder {
     }
 
     fn define_character(&self, name : &str, r:&str, g:&str, b:&str)-> String {
-        let s = format!("\n\\definecolor{{{name}}}{{RGB}}{{{r},{g},{b}}}");
+        let rf : u8 = ( u8::from_str_radix(r, 10).unwrap_or(1)  as f64).mul(1.4) as u8;
+        let gf : u8 = ( u8::from_str_radix(g, 10).unwrap_or(1)  as f64).mul(1.4) as u8;
+        let bf : u8 = ( u8::from_str_radix(b, 10).unwrap_or(1)  as f64).mul(1.4) as u8;
+        let s = format!("\n\\definecolor{{{name}}}{{RGB}}{{{r},{g},{b}}}\n\\definecolor{{{name}f}}{{RGB}}{{{rf},{gf},{bf}}}");
         s
     }
 

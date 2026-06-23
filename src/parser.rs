@@ -205,6 +205,7 @@ impl Parser {
     }
 
 
+
     /*
     fn get_message_from_line(line :&str) -> Message {
         let c = line.chars().nth(2).unwrap();

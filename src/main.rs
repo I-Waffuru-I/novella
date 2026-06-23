@@ -40,13 +40,20 @@ fn run(args : &Args) -> Result<(), StoryError> {
     let tokens = parser.tokenize(rslt)?;
     let built = builder.build_stack(tokens)?;
     if args.debug != 0 {
-        let mut dbg_file = std::fs::File::create("debug.txt").unwrap();
+        let mut dbg_file = std::fs::File::create("debug.tex").unwrap();
         let _ = dbg_file.write(built.as_bytes());
     }
-    let pdf = tectonic::latex_to_pdf(&built).unwrap();
-    let mut file = std::fs::File::create(args.output_file_name.clone()).unwrap();
-    println!("Created file");
-    file.write(&pdf).unwrap();
+    match tectonic::latex_to_pdf(&built) {
+        Ok(pdf) => {
+            let mut file = std::fs::File::create(args.output_file_name.clone()).unwrap();
+            println!("Created file");
+            file.write(&pdf).unwrap();
+        }, 
+        Err(e)=> {
+            println!("{}",e.description());
+            dbg!(e);
+        }
+    };
 
     Ok(())
 } 
